@@ -1,0 +1,8 @@
+re
+sys
+requests
+itertools
+validators
+colorama
+optparse
+python-whois
