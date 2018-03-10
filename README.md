@@ -1,6 +1,7 @@
 # DeepCatcher
 Find your Domains Fast & Easy.
-Getting a suitable domain for your business is really hard these day
+
+Getting a suitable domain for your business is really hard these days.
 Domain name is an important step towards the success of your website.
 
 # Usage
