@@ -4,7 +4,7 @@ Getting a suitable domain for your business is really hard these day
 Domain name is an important step towards the success of your website.
 
 # Usage
-![usage](https://user-images.githubusercontent.com/16267182/37245052-2589940e-249b-11e8-8ab0-a38c9b6ec164.PNG)
+![usage](https://user-images.githubusercontent.com/16267182/37245091-b92dd9f4-249b-11e8-8cad-fa34f1fed241.PNG)
 
 # Keywords
 Search your domain name using specific keywords
