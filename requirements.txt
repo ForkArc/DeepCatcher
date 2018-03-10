@@ -1,5 +1,8 @@
 re
 sys
+whois
+socket
+pprint
 requests
 itertools
 validators

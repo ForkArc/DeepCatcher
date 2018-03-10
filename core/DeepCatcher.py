@@ -17,17 +17,18 @@ class DeepCatcher(object):
 	def __init__(self,options):
 
 		# Basic Settings
-		self.log_file_reserved = "reserved.txt"
-		self.log_file_available = "available.txt"
+		self.log_whois = "whois.log"
+		self.log_reserved = "reserved.log"
+		self.log_available = "available.log"
 
 		# Set Options
-		self.__ltds = options.ltds
+		self.__log = options.log
 		self.__file = options.file
 		self.__comb = options.comb
 		self.__whois = options.whois
 		self.__domain = options.domain
-		self.__popular = options.popular
 		self.__keywords = options.keywords
+		self.__extensions = options.extensions
 
 		# Call Main
 		self.main()
@@ -57,8 +58,8 @@ class DeepCatcher(object):
 			return False
 
 	@property
-	def ltds(self):
-		return self.split(self.__ltds.strip('.') )
+	def extensions(self):
+		return self.split(self.__extensions.strip('.') )
 
 
 	@property
@@ -67,14 +68,14 @@ class DeepCatcher(object):
 
 
 	@property
-	def popular(self):
-		return self.__popular
-
-
-	@property
 	def whois(self):
 		if self.__whois:
 			return self.split(self.__whois)
+
+
+	@property
+	def log(self):
+		return self.__log
 
 
 	def main(self):
@@ -134,12 +135,12 @@ class DeepCatcher(object):
 			return domains
 
 
-		if self.ltds:
+		if self.extensions:
 
 			domains = []
 
-			for ltd in self.ltds:
-				domain = self.checkName(name,ltd)
+			for ext in self.extensions:
+				domain = self.checkName(name,ext)
 				domains.append(domain)
 
 			return domains
@@ -156,39 +157,47 @@ class DeepCatcher(object):
 		try:
 			socket.gethostbyname(domain)
 			print Fore.RED+"%s is Reserved" %domain
-			self.log(domain, self.log_file_reserved)
+			self.write(domain, self.log_reserved)
 			return False
 
 		except:
 			print Fore.GREEN+"%s is Available" %domain
-			self.log(domain, self.log_file_available)
+			self.write(domain, self.log_available)
 			return True
 
 
-	def checkName(self,name,ltd=None):
+	def checkName(self,name,ext=None):
 		if validators.domain(name):
 			return name
 		else:
-
 			name = re.sub(r'\W+', '', name)
-			return name+'.'+ltd
+			return name+'.'+ext
 
 
 	def checkWhois(self,domain):
-		print Fore.RED
-		print "Domain : %s \r" %domain
-		
-		print Fore.WHITE
-		record = whois.whois(domain)
-		print record
+
+		try:	
+			record = whois.whois(domain)
+			print Fore.RED
+			print "Domain : %s" %domain
+			print Fore.WHITE
+			print record
+			self.write(record, self.log_whois)
+			return True
+
+		except:
+			print Fore.RED
+			print "Can't get whois record for %s" %domain
+			return False
 
 
 	def split(self,option):
 		return re.split(';|,| |\n', option)
 
 
-	def log(self,content,file):
-		f = open(file,'a')
-		f.write(content+'\r')
-		f.close()
+	def write(self,content,file):
+		if self.log:
+			f = open(file,'a')
+			f.write(content+'\r')
+			f.close()
 

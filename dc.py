@@ -29,7 +29,7 @@ def main():
                     # "--domain",
                     action="store",
                     dest="domain",
-                    help="Check a single domain name")
+                    help="Check a specific domain name")
 
     parser.add_option("-w",
                     # "--whois",
@@ -50,10 +50,10 @@ def main():
                     # default="keywords.txt",
                     help="Load keywords from a file separated by comma, line or space")
 
-    parser.add_option("-l",
-                    # "--ltds",
+    parser.add_option("-e",
+                    # "--extensions",
                     action="store",
-                    dest="ltds",
+                    dest="extensions",
                     default='.com',
                     help="LTD extensions separated by comma")
 
@@ -62,16 +62,16 @@ def main():
                     # "--comb",
                     action="store",
                     dest="comb",
-                    default=2,
+                    # default=2,
                     type="int",
                     help="Number of keywords in domain name combination")
 
-    parser.add_option("-p",
-                    # "--popular",
+    parser.add_option("-l",
+                    # "--log",
                     action="store_true",
-                    dest="popular",
+                    dest="log",
                     default=False,
-                    help="Use popular keywords with given words")
+                    help="Logging operation results")
 
 
     (options, args) = parser.parse_args()
@@ -82,17 +82,17 @@ def main():
         parser.parse_args(['--help'])
 
 
-    if options.ltds == "all":
-        options.ltds = "com,net,org,info,cc,io,biz,app"
+    if options.extensions == "all":
+        options.extensions = "com,net,org,info,cc,io,biz,app,co,xyx,club,design,shop,site,online,me,us,ca,ac,academy,accountant,actor,adult,ae,ai,am,apartment,art,at,bar,be,beer,bet,bid,blog,cam,cab,city,cl,cool,country,cx,cz,de,dating,zone,yt,wtf,ws,win,work,wiki,wf,watch,vote,vip,video,vg,vet,vc,vegas,uno,uk,tv,tube,toys,town,top,today,to,tl,tk,tf,tech,black,build,buzz,cafe,ch,chat,click,cm,"
 
-    elif not options.ltds:
-        options.ltds = "com"
+    elif options.extensions == "basic":
+        options.extensions = "com,net,org"
 
-    if options.keywords and options.popular:
-        options.keywords = options.keywords+"group,network,online,get,hub,support,blog,business"
+    elif not options.extensions:
+        options.extensions = "com"
 
     if not options.comb:
-        options.comb = 1
+        options.comb = 2
 
 
     # Call core.DeepCatch
