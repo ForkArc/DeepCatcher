@@ -17,7 +17,7 @@ Search if specific domain is available
 
 # Whois
 Check whois records for specific domain
-![whois](https://user-images.githubusercontent.com/16267182/37245053-26491a4a-249b-11e8-9444-124fe5ec0acf.PNG)
+![whois](https://user-images.githubusercontent.com/16267182/37245175-0ec602b4-249d-11e8-94da-2a56a3dbe054.PNG)
 
 # Contribution
 Want to contribute? What are you waiting for? Fork it and hit up with a pull request. Mail me at contact@deyaa.me
