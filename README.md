@@ -1,23 +1,22 @@
 # DeepCatcher
 Find your Domains Fast & Easy.
+Getting a suitable domain for your business is really hard these day
+Domain name is an important step towards the success of your website.
 
 # Usage
-![usage](https://user-images.githubusercontent.com/16267182/37232127-4b43d0e2-23f6-11e8-8780-0e816993c985.PNG)
+![usage](https://user-images.githubusercontent.com/16267182/37245052-2589940e-249b-11e8-8ab0-a38c9b6ec164.PNG)
 
 # Keywords
 Search your domain name using specific keywords
-
-![keywords](https://user-images.githubusercontent.com/16267182/37231988-d28278ac-23f5-11e8-8e85-be1219e72b93.PNG)
+![keywords](https://user-images.githubusercontent.com/16267182/37245055-2995b87a-249b-11e8-8e55-0852b3139775.PNG)
 
 # Domain
 Search if specific domain is available
-
-![domain](https://user-images.githubusercontent.com/16267182/37232033-048b1e26-23f6-11e8-873f-8a3175803d8c.PNG)
+![domain](https://user-images.githubusercontent.com/16267182/37245054-27ae2dee-249b-11e8-89b4-3a0458da465e.PNG)
 
 # Whois
 Check whois records for specific domain
-
-![whois](https://user-images.githubusercontent.com/16267182/37232071-1d16d6e2-23f6-11e8-8613-8ddb2335a83a.PNG) 
+![whois](https://user-images.githubusercontent.com/16267182/37245053-26491a4a-249b-11e8-9444-124fe5ec0acf.PNG)
 
 # Contribution
 Want to contribute? What are you waiting for? Fork it and hit up with a pull request. Mail me at contact@deyaa.me
